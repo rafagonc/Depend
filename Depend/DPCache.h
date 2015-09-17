@@ -12,7 +12,7 @@
 
 @interface DPCache : NSObject
 
-+(NSArray *)injectClasses;
-+(DPInjectionDescriptor *)descriptorWithClass:(Class)class andPropertyName:(NSString *)propertyName;
++(NSDictionary *)injectClasses;
++(DPInjectionDescriptor *)descriptorWithClass:(Class)c;
 
 @end

@@ -12,10 +12,9 @@
 
 -(instancetype)init {
     if (self = [super init]) {
-        NSLog(@"%@",_object);
-        NSLog(@"%@",self.object);
-        NSLog(@"%@",_object);
+        
     } return self;
 }
+
 
 @end

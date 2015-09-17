@@ -11,6 +11,8 @@
 
 @interface EXInjectedClass : NSObject
 
-@property (nonatomic,setter=injectedProtocol:,readonly) id<EXProtocol> object;
+@property (setter=injected:,readonly) id<EXProtocol> object;
+@property (setter=injected_another:,readonly) id<EXProtocol> anotherObject;
+
 
 @end

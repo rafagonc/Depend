@@ -12,11 +12,12 @@
 
 @implementation DPCache
 
-+(NSArray *)injectClasses {
-    static NSMutableArray *injectClasses;
+#pragma mark - get injectable classes
++(NSDictionary *)injectClasses {
+    static NSMutableDictionary *injectClasses;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        injectClasses = [[NSMutableArray alloc] init];
+        injectClasses = [[NSMutableDictionary alloc] init];
         unsigned int class_count = objc_getClassList(NULL, 0);
         Class * classes = (Class *)calloc(class_count, sizeof(Class));
         objc_getClassList(classes, class_count);
@@ -24,7 +25,7 @@
             @autoreleasepool {
                 Class class = classes[i];
                 [DPCache shouldBeInjected:class withResult:^(DPInjectionDescriptor *descriptor) {
-                    [injectClasses addObject:descriptor];
+                    [injectClasses setObject:descriptor forKey:NSStringFromClass(class)];
                 }];
             }
         }
@@ -44,13 +45,10 @@
     }
     if (desc.properties.count) result(desc);
 }
-+(DPInjectionDescriptor *)descriptorWithClass:(Class)class andPropertyName:(NSString *)propertyName {
-    for (DPInjectionDescriptor *desc in [DPCache injectClasses]) {
-        if (desc.injectClass == class && [desc.propertiesNames containsObject:propertyName]) {
-            return desc;
-        }
-    }
-    return nil;
+
+#pragma mark - retrieving
++(DPInjectionDescriptor *)descriptorWithClass:(Class)c {
+    return [DPCache injectClasses][NSStringFromClass(c)];
 }
 
 @end

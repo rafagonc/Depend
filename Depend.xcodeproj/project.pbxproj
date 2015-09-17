@@ -16,6 +16,9 @@
 		2A28577F1BAA4BBD00AEE15C /* DPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A28577E1BAA4BBD00AEE15C /* DPCache.m */; };
 		2A2857821BAA4F3100AEE15C /* DPInjectionDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2857811BAA4F3100AEE15C /* DPInjectionDescriptor.m */; };
 		2A2857851BAA501800AEE15C /* DPInjectionPropertyDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2857841BAA501800AEE15C /* DPInjectionPropertyDescriptor.m */; };
+		2A28578C1BAB48C200AEE15C /* DPImplementationKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A28578B1BAB48C200AEE15C /* DPImplementationKey.m */; };
+		2A28578F1BAB519100AEE15C /* EXProtocolImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A28578E1BAB519100AEE15C /* EXProtocolImplementation.m */; };
+		2A2857921BAB519E00AEE15C /* EXAnotherProtocolImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2857911BAB519E00AEE15C /* EXAnotherProtocolImplementation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,12 @@
 		2A2857811BAA4F3100AEE15C /* DPInjectionDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPInjectionDescriptor.m; sourceTree = "<group>"; };
 		2A2857831BAA501800AEE15C /* DPInjectionPropertyDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPInjectionPropertyDescriptor.h; sourceTree = "<group>"; };
 		2A2857841BAA501800AEE15C /* DPInjectionPropertyDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPInjectionPropertyDescriptor.m; sourceTree = "<group>"; };
+		2A28578A1BAB48C200AEE15C /* DPImplementationKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPImplementationKey.h; sourceTree = "<group>"; };
+		2A28578B1BAB48C200AEE15C /* DPImplementationKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPImplementationKey.m; sourceTree = "<group>"; };
+		2A28578D1BAB519100AEE15C /* EXProtocolImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXProtocolImplementation.h; sourceTree = "<group>"; };
+		2A28578E1BAB519100AEE15C /* EXProtocolImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXProtocolImplementation.m; sourceTree = "<group>"; };
+		2A2857901BAB519E00AEE15C /* EXAnotherProtocolImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXAnotherProtocolImplementation.h; sourceTree = "<group>"; };
+		2A2857911BAB519E00AEE15C /* EXAnotherProtocolImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXAnotherProtocolImplementation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,8 @@
 			children = (
 				2A10B3821BAA79F70088592B /* DPRegistry.h */,
 				2A10B3831BAA79F70088592B /* DPRegistry.m */,
+				2A28578A1BAB48C200AEE15C /* DPImplementationKey.h */,
+				2A28578B1BAB48C200AEE15C /* DPImplementationKey.m */,
 				2A2857661BAA4B6400AEE15C /* DPInjector.h */,
 				2A2857681BAA4B6400AEE15C /* DPInjector.m */,
 				2A28577D1BAA4BBD00AEE15C /* DPCache.h */,
@@ -131,6 +142,10 @@
 				2A10B3811BAA729F0088592B /* EXProtocol.h */,
 				2A10B37E1BAA72920088592B /* EXInjectedClass.h */,
 				2A10B37F1BAA72920088592B /* EXInjectedClass.m */,
+				2A28578D1BAB519100AEE15C /* EXProtocolImplementation.h */,
+				2A28578E1BAB519100AEE15C /* EXProtocolImplementation.m */,
+				2A2857901BAB519E00AEE15C /* EXAnotherProtocolImplementation.h */,
+				2A2857911BAB519E00AEE15C /* EXAnotherProtocolImplementation.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,6 +241,7 @@
 				2A28577F1BAA4BBD00AEE15C /* DPCache.m in Sources */,
 				2A2857851BAA501800AEE15C /* DPInjectionPropertyDescriptor.m in Sources */,
 				2A10B3841BAA79F70088592B /* DPRegistry.m in Sources */,
+				2A28578C1BAB48C200AEE15C /* DPImplementationKey.m in Sources */,
 				2A2857821BAA4F3100AEE15C /* DPInjectionDescriptor.m in Sources */,
 				2A2857691BAA4B6400AEE15C /* DPInjector.m in Sources */,
 			);
@@ -237,6 +253,8 @@
 			files = (
 				2A10B37D1BAA6FC10088592B /* DependTests.m in Sources */,
 				2A10B3801BAA72920088592B /* EXInjectedClass.m in Sources */,
+				2A2857921BAB519E00AEE15C /* EXAnotherProtocolImplementation.m in Sources */,
+				2A28578F1BAB519100AEE15C /* EXProtocolImplementation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

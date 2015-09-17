@@ -20,8 +20,8 @@
 #pragma mark - constructor
 -(instancetype)initWithClass:(__unsafe_unretained Class)c {
     if (self = [super init]) {
-        self.injectClass = c;
-        self.mProperties = [[NSMutableArray alloc] init];
+        _injectClass = c;
+        _mProperties = [[NSMutableArray alloc] init];
     } return self;
 }
 
@@ -36,6 +36,11 @@
 #pragma mark - adding
 -(void)addProperty:(objc_property_t)property {
     [self.mProperties addObject:[[DPInjectionPropertyDescriptor alloc] initWithProperty:property]];
+}
+
+#pragma mark - retrieving
+-(DPInjectionPropertyDescriptor *)propertyDescriptorForSelector:(SEL)selector {
+    return [[self.mProperties filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"propertyName = %@", NSStringFromSelector(selector)]] firstObject];
 }
 
 @end

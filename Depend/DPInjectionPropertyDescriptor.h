@@ -15,8 +15,10 @@
 -(instancetype)initWithProperty:(objc_property_t)property;
 
 #pragma mark - properties
-@property (nonatomic,readonly) NSString *propertyName;
-@property (nonatomic,readonly) Protocol * protocol;
+@property (nonatomic,readonly) NSString * propertyName;
+@property (nonatomic,readonly) SEL injectionSelector;
+@property (nonatomic,readonly) NSString * context;
+@property (nonatomic,readonly) NSString * protocolName;
 
 
 @end

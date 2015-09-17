@@ -9,17 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+@class DPInjectionPropertyDescriptor;
+
 @interface DPInjectionDescriptor : NSObject
 
 #pragma mark - constructor
 -(instancetype)initWithClass:(__unsafe_unretained Class)c;
 
 #pragma mark - properties
-@property (nonatomic,unsafe_unretained) Class injectClass;
+@property (nonatomic,readonly, unsafe_unretained) Class injectClass;
 @property (nonatomic,readonly) NSArray *propertiesNames;
 @property (nonatomic,readonly) NSArray *properties;
 
 #pragma mark - adding
 -(void)addProperty:(objc_property_t)property;
+
+#pragma mark - retrieving
+-(DPInjectionPropertyDescriptor *)propertyDescriptorForSelector:(SEL)selector;
  
 @end
