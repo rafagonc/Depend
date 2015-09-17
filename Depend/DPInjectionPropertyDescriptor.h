@@ -15,8 +15,8 @@
 -(instancetype)initWithProperty:(objc_property_t)property;
 
 #pragma mark - properties
-@property (nonatomic,strong) NSString *propertyName;
-@property (nonatomic,unsafe_unretained) Protocol * protocol;
+@property (nonatomic,readonly) NSString *propertyName;
+@property (nonatomic,readonly) Protocol * protocol;
 
 
 @end

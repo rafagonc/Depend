@@ -8,6 +8,24 @@
 
 #import "DPInjectionPropertyDescriptor.h"
 
+@interface DPInjectionPropertyDescriptor ()
+
+@property (nonatomic,assign) objc_property_t property;
+
+@end
+
 @implementation DPInjectionPropertyDescriptor
+
+#pragma mark - constructor
+-(instancetype)initWithProperty:(objc_property_t)property {
+    if (self = [super init]) {
+        self.property = property;
+    } return self;
+}
+
+#pragma mark - getters
+-(NSString *)propertyName {
+    return [NSString stringWithCString:property_getName(self.property) encoding:NSUTF8StringEncoding];
+}
 
 @end

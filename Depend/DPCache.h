@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class DPInjectionDescriptor;
 
 @interface DPCache : NSObject
+
++(NSArray *)injectClasses;
++(DPInjectionDescriptor *)descriptorWithClass:(Class)class andPropertyName:(NSString *)propertyName;
 
 @end

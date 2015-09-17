@@ -16,7 +16,8 @@
 
 #pragma mark - properties
 @property (nonatomic,unsafe_unretained) Class injectClass;
-@property (nonatomic,strong)            NSArray *propertyNames;
+@property (nonatomic,readonly) NSArray *propertiesNames;
+@property (nonatomic,readonly) NSArray *properties;
 
 #pragma mark - adding
 -(void)addProperty:(objc_property_t)property;

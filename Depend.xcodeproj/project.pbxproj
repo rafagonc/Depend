@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A10B37D1BAA6FC10088592B /* DependTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B37C1BAA6FC10088592B /* DependTests.m */; };
+		2A10B3801BAA72920088592B /* EXInjectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B37F1BAA72920088592B /* EXInjectedClass.m */; };
+		2A10B3841BAA79F70088592B /* DPRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B3831BAA79F70088592B /* DPRegistry.m */; };
 		2A2857671BAA4B6400AEE15C /* DPInjector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2A2857661BAA4B6400AEE15C /* DPInjector.h */; };
 		2A2857691BAA4B6400AEE15C /* DPInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2857681BAA4B6400AEE15C /* DPInjector.m */; };
 		2A28576F1BAA4B6400AEE15C /* libDepend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2857631BAA4B6400AEE15C /* libDepend.a */; };
@@ -39,6 +42,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A10B37C1BAA6FC10088592B /* DependTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependTests.m; sourceTree = "<group>"; };
+		2A10B37E1BAA72920088592B /* EXInjectedClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXInjectedClass.h; sourceTree = "<group>"; };
+		2A10B37F1BAA72920088592B /* EXInjectedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXInjectedClass.m; sourceTree = "<group>"; };
+		2A10B3811BAA729F0088592B /* EXProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXProtocol.h; sourceTree = "<group>"; };
+		2A10B3821BAA79F70088592B /* DPRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRegistry.h; sourceTree = "<group>"; };
+		2A10B3831BAA79F70088592B /* DPRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRegistry.m; sourceTree = "<group>"; };
 		2A2857631BAA4B6400AEE15C /* libDepend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDepend.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2857661BAA4B6400AEE15C /* DPInjector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPInjector.h; sourceTree = "<group>"; };
 		2A2857681BAA4B6400AEE15C /* DPInjector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPInjector.m; sourceTree = "<group>"; };
@@ -92,6 +101,8 @@
 		2A2857651BAA4B6400AEE15C /* Depend */ = {
 			isa = PBXGroup;
 			children = (
+				2A10B3821BAA79F70088592B /* DPRegistry.h */,
+				2A10B3831BAA79F70088592B /* DPRegistry.m */,
 				2A2857661BAA4B6400AEE15C /* DPInjector.h */,
 				2A2857681BAA4B6400AEE15C /* DPInjector.m */,
 				2A28577D1BAA4BBD00AEE15C /* DPCache.h */,
@@ -107,6 +118,7 @@
 		2A2857721BAA4B6400AEE15C /* DependTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A10B37C1BAA6FC10088592B /* DependTests.m */,
 				2A2857731BAA4B6400AEE15C /* Supporting Files */,
 			);
 			path = DependTests;
@@ -116,6 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				2A2857741BAA4B6400AEE15C /* Info.plist */,
+				2A10B3811BAA729F0088592B /* EXProtocol.h */,
+				2A10B37E1BAA72920088592B /* EXInjectedClass.h */,
+				2A10B37F1BAA72920088592B /* EXInjectedClass.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -210,6 +225,7 @@
 			files = (
 				2A28577F1BAA4BBD00AEE15C /* DPCache.m in Sources */,
 				2A2857851BAA501800AEE15C /* DPInjectionPropertyDescriptor.m in Sources */,
+				2A10B3841BAA79F70088592B /* DPRegistry.m in Sources */,
 				2A2857821BAA4F3100AEE15C /* DPInjectionDescriptor.m in Sources */,
 				2A2857691BAA4B6400AEE15C /* DPInjector.m in Sources */,
 			);
@@ -219,6 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A10B37D1BAA6FC10088592B /* DependTests.m in Sources */,
+				2A10B3801BAA72920088592B /* EXInjectedClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +398,7 @@
 				2A2857791BAA4B6400AEE15C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A28577A1BAA4B6400AEE15C /* Build configuration list for PBXNativeTarget "DependTests" */ = {
 			isa = XCConfigurationList;
@@ -388,6 +407,7 @@
 				2A28577C1BAA4B6400AEE15C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
