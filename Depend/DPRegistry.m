@@ -52,7 +52,7 @@
 }
 
 #pragma mark - add
--(void)addImplementation:(id)imp forProtocol:(Protocol *)protocol context:(NSString *)context {
+-(void)registerImplementation:(id)imp forProtocol:(Protocol *)protocol context:(NSString *)context {
     NSAssert(imp != nil, @"Implementation cannot be nil, it needs to be a class (will be instantiated with default constructor or a instance");
     NSAssert(protocol != nil, @"Protocol cannot be nil when adding an implementation to the registry");
     DPImplementationKey *desc = [[DPImplementationKey alloc] initWithProtocolName:NSStringFromProtocol(protocol) andContext:context];

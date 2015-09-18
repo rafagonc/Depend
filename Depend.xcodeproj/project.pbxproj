@@ -10,6 +10,7 @@
 		2A10B37D1BAA6FC10088592B /* DependTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B37C1BAA6FC10088592B /* DependTests.m */; };
 		2A10B3801BAA72920088592B /* EXInjectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B37F1BAA72920088592B /* EXInjectedClass.m */; };
 		2A10B3841BAA79F70088592B /* DPRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B3831BAA79F70088592B /* DPRegistry.m */; };
+		2A10B4391BABB5610088592B /* DPRegistry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2A10B3821BAA79F70088592B /* DPRegistry.h */; };
 		2A2857671BAA4B6400AEE15C /* DPInjector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2A2857661BAA4B6400AEE15C /* DPInjector.h */; };
 		2A2857691BAA4B6400AEE15C /* DPInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2857681BAA4B6400AEE15C /* DPInjector.m */; };
 		2A28576F1BAA4B6400AEE15C /* libDepend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2857631BAA4B6400AEE15C /* libDepend.a */; };
@@ -38,6 +39,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				2A10B4391BABB5610088592B /* DPRegistry.h in CopyFiles */,
 				2A2857671BAA4B6400AEE15C /* DPInjector.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

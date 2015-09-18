@@ -32,8 +32,8 @@
     
     implementation = [[EXAnotherProtocolImplementation alloc] init];
     
-    [[DPRegistry sharedRegistry] addImplementation:[EXProtocolImplementation class] forProtocol:@protocol(EXProtocol) context:nil];
-    [[DPRegistry sharedRegistry] addImplementation:implementation forProtocol:@protocol(EXProtocol) context:@"another"];
+    [[DPRegistry sharedRegistry] registerImplementation:[EXProtocolImplementation class] forProtocol:@protocol(EXProtocol) context:nil];
+    [[DPRegistry sharedRegistry] registerImplementation:implementation forProtocol:@protocol(EXProtocol) context:@"another"];
     
     injected = [[EXInjectedClass alloc] init];
 }
@@ -47,10 +47,10 @@
     XCTAssertEqual(implementation, injected.anotherObject);
 }
 -(void)testNilImplementationOnAddImplementation {
-    XCTAssertThrows([[DPRegistry sharedRegistry] addImplementation:nil forProtocol:@protocol(EXProtocol) context:nil]);
+    XCTAssertThrows([[DPRegistry sharedRegistry] registerImplementation:nil forProtocol:@protocol(EXProtocol) context:nil]);
 }
 -(void)testNilProtocolOnAddImplementation {
-    XCTAssertThrows([[DPRegistry sharedRegistry] addImplementation:[EXProtocolImplementation class] forProtocol:nil context:nil]);
+    XCTAssertThrows([[DPRegistry sharedRegistry] registerImplementation:[EXProtocolImplementation class] forProtocol:nil context:nil]);
 }
 
 @end
