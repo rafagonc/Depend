@@ -21,6 +21,7 @@ The implementation works this way:
 On the app delegate, you need to call the DPInjector inject method:
 <pre>-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [DPInjector inject];
+    return YES;
 }
 </pre>
   
