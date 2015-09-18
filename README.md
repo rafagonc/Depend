@@ -8,7 +8,7 @@ Depend is a simple dependency injection framework to do the simplest and minimal
 Just provide the DPRegistry the implementation for the protocol:  
 <pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:nil];</pre>  
 The implementation works this way:  
-**If you provide a class**: The injection class will instantiate for you with the default constructor   **If you provide an instance**: The instance will be injected!  
+**If you provide a class**: The injection class will instantiate for you with the default constructor. **If you provide an instance**: The instance will be injected!  
 
 
 ## The Injection
