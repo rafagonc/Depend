@@ -3,12 +3,18 @@
 Depend is a simple dependency injection framework to do the simplest and minimally invasive property injection. It just works with Protocol bindings since it is the right way to do it! And it’s pretty simple:  
 
 
+## The Installation
+  
+You can install using cocoa pods:  
+<pre>pod ‘Depend'</pre>  
+
+
 ## The Registration
   
 Just provide the DPRegistry the implementation for the protocol:  
 <pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:nil];</pre>  
 The implementation works this way:  
-**If you provide a class**: The injection class will instantiate for you with the default constructor. **If you provide an instance**: The instance will be injected!  
+**If you provide a class**: The injection class will instantiate for you with the default constructor   **If you provide an instance**: The instance will be injected!  
 
 
 ## The Injection
@@ -25,7 +31,7 @@ Just change the injection declaration to:
 <pre>@property (setter=injected_post:, readonly) id&lt;DPDatasourceProtocol&gt; postDatasource;  
 @property (setter=injected_stupid:, readonly) id&lt;DPDatasourceProtocol&gt; anotherStupidDatasource;</pre>  
 And the registration to:  
-<pre>  [[DPRegistry sharedRegistry] registerImplementation:[[DPPostDatasource alloc] init] forProtocol:@protocol(DPDatasourceProtocol) context:@“post”] //already instantiated;</pre><pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
+<pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPPostDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“post”];</pre><pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
 Any word that comes after the _ (underline) is the context name.  
 
 
