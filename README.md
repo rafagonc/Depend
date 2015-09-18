@@ -8,16 +8,22 @@ Depend is a simple dependency injection framework to do the simplest and minimal
 You can install using cocoa pods:  
 <pre>pod ‘Depend'</pre>  
 
-
 ## The Registration
   
 Just provide the DPRegistry the implementation for the protocol:  
-<pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:nil];</pre>  
+<pre> #import <Depend/DPRegistry.h>
+[[DPRegistry sharedRegistry] registerImplementation:[DPDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:nil];</pre>  
 The implementation works this way:  
 **If you provide a class**: The injection class will instantiate for you with the default constructor   **If you provide an instance**: The instance will be injected!  
 
 
 ## The Injection
+
+On the app delegate, you need to call the DPInjector inject method:
+<pre>#import <Depend/DPInjector.h>
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [DPInjector inject];
+    }</pre>
   
 To inject on a class you just need to write your property declaration this way. It’s important to declare it on the private interface of your class.  
 <pre>@property (setter=injected:, readonly) id&lt;DPDatasourceProtocol&gt; datasource;</pre>  
