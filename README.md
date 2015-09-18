@@ -11,8 +11,7 @@ You can install using cocoa pods:
 ## The Registration
   
 Just provide the DPRegistry the implementation for the protocol:  
-<pre> #import <Depend/DPRegistry.h>
-[[DPRegistry sharedRegistry] registerImplementation:[DPDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:nil];</pre>  
+<pre>[[DPRegistry sharedRegistry] registerImplementation:[DPDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:nil];</pre>  
 The implementation works this way:  
 **If you provide a class**: The injection class will instantiate for you with the default constructor   **If you provide an instance**: The instance will be injected!  
 
@@ -20,10 +19,10 @@ The implementation works this way:
 ## The Injection
 
 On the app delegate, you need to call the DPInjector inject method:
-<pre>#import <Depend/DPInjector.h>
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+<pre>-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [DPInjector inject];
-    }</pre>
+}
+</pre>
   
 To inject on a class you just need to write your property declaration this way. It’s important to declare it on the private interface of your class.  
 <pre>@property (setter=injected:, readonly) id&lt;DPDatasourceProtocol&gt; datasource;</pre>  
