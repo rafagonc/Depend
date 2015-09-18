@@ -1,6 +1,6 @@
 # Depend
   
-Depend is a simple dependency injection framework to do the simplest and minimally invasive property injection. It just works with Protocol bindings since it is the right thing to do it! And it’s pretty simple:  
+Depend is a simple dependency injection framework to do the simplest and minimally invasive property injection. It just works with Protocol bindings since it is the right thing to do! And it’s pretty simple:  
 
 
 ## The Installation
