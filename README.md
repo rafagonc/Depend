@@ -37,7 +37,7 @@ Just change the injection declaration to:
 <pre>@property (setter=injected_post:, readonly) id&lt;DPDatasourceProtocol&gt; postDatasource;  
 @property (setter=injected_stupid:, readonly) id&lt;DPDatasourceProtocol&gt; anotherStupidDatasource;</pre>  
 And the registration to:  
-<pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPPostDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“post”];</pre><pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
+<pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPPostDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“post”]; [[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
 Any word that comes after the _ (underline) is the context name.  
 
 
