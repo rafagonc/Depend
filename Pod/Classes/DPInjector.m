@@ -35,12 +35,11 @@
 id returnInjectedValue(id self, SEL _cmd) {
     DPInjectionDescriptor *injectionDescriptor = [DPCache descriptorWithClass:[self class]];
     DPInjectionPropertyDescriptor *propertyDescriptor = [injectionDescriptor propertyDescriptorForSelector:_cmd];
-    const char *key = [propertyDescriptor.propertyName cStringUsingEncoding:NSUTF8StringEncoding];
-    id injectedObject = objc_getAssociatedObject(self, key);
+    id injectedObject = objc_getAssociatedObject(self, _cmd);
     if (injectedObject == nil) {
-        objc_setAssociatedObject(self, key, [[DPRegistry sharedRegistry] implementationForProtocol:propertyDescriptor.protocolName andContext:propertyDescriptor.context] , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, _cmd, [[DPRegistry sharedRegistry] implementationForProtocol:propertyDescriptor.protocolName andContext:propertyDescriptor.context] , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    return objc_getAssociatedObject(self, key);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 @end
