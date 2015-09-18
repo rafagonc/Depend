@@ -1,6 +1,6 @@
 # Depend
   
-Depend is a simple dependency injection framework to do the simplest and minimally invasive property injection. It just works with Protocol bindings since it is the right way to do it! And it’s pretty simple:  
+Depend is a simple dependency injection framework to do the simplest and minimally invasive property injection. It just works with Protocol bindings since it is the right thing to do it! And it’s pretty simple:  
 
 
 ## The Installation
@@ -8,7 +8,7 @@ Depend is a simple dependency injection framework to do the simplest and minimal
 You can install using cocoa pods:  
 <pre>pod ‘Depend'</pre>  
 
-Or, you can drop the files inside Pod/Classes into your project. But it is not a nice way to control your dependencies.
+Or, you can drop the files inside Pod/Classes into your project.
 
 ## The Registration
   
@@ -27,7 +27,7 @@ On the app delegate, you need to call the DPInjector inject method:
 }
 </pre>
   
-To inject on a class you just need to write your property declaration this way. It’s important to declare it on the private interface of your class.  
+To inject on a class you just need to write your property declaration with the 'injected' prefix to the setter and the readonly qualifier. It’s important to declare it on the private interface of your class.  
 <pre>@property (setter=injected:, readonly) id&lt;DPDatasourceProtocol&gt; datasource;</pre>  
 Done! When you access **self.datasource **, it is going to be already populated.  
 
