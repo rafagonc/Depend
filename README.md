@@ -8,6 +8,8 @@ Depend is a simple dependency injection framework to do the simplest and minimal
 You can install using cocoa pods:  
 <pre>pod ‘Depend'</pre>  
 
+Or, you can drop the files inside Pod/Classes into your project. But it is not a nice way to control your dependencies.
+
 ## The Registration
   
 Just provide the DPRegistry the implementation for the protocol:  
@@ -37,7 +39,8 @@ Just change the injection declaration to:
 <pre>@property (setter=injected_post:, readonly) id&lt;DPDatasourceProtocol&gt; postDatasource;  
 @property (setter=injected_stupid:, readonly) id&lt;DPDatasourceProtocol&gt; anotherStupidDatasource;</pre>  
 And the registration to:  
-<pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPPostDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“post”]; [[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
+<pre>  [[DPRegistry sharedRegistry] registerImplementation:[DPPostDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“post”];
+[[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
 Any word that comes after the _ (underline) is the context name.  
 
 
