@@ -33,7 +33,13 @@
 
 #pragma mark - generic getter method
 id returnInjectedValue(id self, SEL _cmd) {
+    Class class = [self class];
     DPInjectionDescriptor *injectionDescriptor = [DPCache descriptorWithClass:[self class]];
+    while (injectionDescriptor == nil) {
+        class = class_getSuperclass(class);
+        injectionDescriptor = [DPCache descriptorWithClass:class];
+        if (class_isMetaClass([NSObject class])) break;
+    }
     DPInjectionPropertyDescriptor *propertyDescriptor = [injectionDescriptor propertyDescriptorForSelector:_cmd];
     id injectedObject = objc_getAssociatedObject(self, _cmd);
     if (injectedObject == nil) {
