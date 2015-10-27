@@ -18,6 +18,7 @@
 		2A2E64971BABC7D6001752FE /* DPInjectionPropertyDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E648F1BABC7D6001752FE /* DPInjectionPropertyDescriptor.m */; };
 		2A2E64981BABC7D6001752FE /* DPInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E64911BABC7D6001752FE /* DPInjector.m */; };
 		2A2E64991BABC7D6001752FE /* DPRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E64931BABC7D6001752FE /* DPRegistry.m */; };
+		2A92CA341BDFE33C004044D7 /* EXInjectedSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92CA331BDFE33C004044D7 /* EXInjectedSubclass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		2A2E64911BABC7D6001752FE /* DPInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPInjector.m; path = Pod/Classes/DPInjector.m; sourceTree = SOURCE_ROOT; };
 		2A2E64921BABC7D6001752FE /* DPRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPRegistry.h; path = Pod/Classes/DPRegistry.h; sourceTree = SOURCE_ROOT; };
 		2A2E64931BABC7D6001752FE /* DPRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPRegistry.m; path = Pod/Classes/DPRegistry.m; sourceTree = SOURCE_ROOT; };
+		2A92CA321BDFE33C004044D7 /* EXInjectedSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXInjectedSubclass.h; sourceTree = "<group>"; };
+		2A92CA331BDFE33C004044D7 /* EXInjectedSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXInjectedSubclass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				2A28578E1BAB519100AEE15C /* EXProtocolImplementation.m */,
 				2A2857901BAB519E00AEE15C /* EXAnotherProtocolImplementation.h */,
 				2A2857911BAB519E00AEE15C /* EXAnotherProtocolImplementation.m */,
+				2A92CA321BDFE33C004044D7 /* EXInjectedSubclass.h */,
+				2A92CA331BDFE33C004044D7 /* EXInjectedSubclass.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A92CA341BDFE33C004044D7 /* EXInjectedSubclass.m in Sources */,
 				2A10B37D1BAA6FC10088592B /* DependTests.m in Sources */,
 				2A10B3801BAA72920088592B /* EXInjectedClass.m in Sources */,
 				2A2857921BAB519E00AEE15C /* EXAnotherProtocolImplementation.m in Sources */,

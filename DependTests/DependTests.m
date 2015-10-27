@@ -17,6 +17,7 @@
 #import "EXProtocolImplementation.h"
 #import "EXAnotherProtocolImplementation.h"
 #import "EXInjectedClass.h"
+#import "EXInjectedSubclass.h"
 
 @interface DependTests : XCTestCase {
     EXInjectedClass * injected;
@@ -35,7 +36,7 @@
     [[DPRegistry sharedRegistry] registerImplementation:[EXProtocolImplementation class] forProtocol:@protocol(EXProtocol) context:nil];
     [[DPRegistry sharedRegistry] registerImplementation:implementation forProtocol:@protocol(EXProtocol) context:@"another"];
     
-    injected = [[EXInjectedClass alloc] init];
+    injected = [[EXInjectedSubclass alloc] init];
 }
 
 #pragma mark tests

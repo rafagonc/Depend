@@ -35,12 +35,13 @@
 id returnInjectedValue(id self, SEL _cmd) {
     Class class = [self class];
     DPInjectionDescriptor *injectionDescriptor = [DPCache descriptorWithClass:[self class]];
-    while (injectionDescriptor == nil) {
+    DPInjectionPropertyDescriptor *propertyDescriptor = [injectionDescriptor propertyDescriptorForSelector:_cmd];
+    while (propertyDescriptor == nil) {
         class = class_getSuperclass(class);
         injectionDescriptor = [DPCache descriptorWithClass:class];
+        propertyDescriptor = [injectionDescriptor propertyDescriptorForSelector:_cmd];
         if (class_isMetaClass([NSObject class])) break;
     }
-    DPInjectionPropertyDescriptor *propertyDescriptor = [injectionDescriptor propertyDescriptorForSelector:_cmd];
     id injectedObject = objc_getAssociatedObject(self, _cmd);
     if (injectedObject == nil) {
         objc_setAssociatedObject(self, _cmd, [[DPRegistry sharedRegistry] implementationForProtocol:propertyDescriptor.protocolName andContext:propertyDescriptor.context] , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
