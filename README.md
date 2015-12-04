@@ -43,6 +43,13 @@ And the registration to:
 [[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
 Any word that comes after the _ (underline) is the context name.  
 
+### Wanna see a example on a real project? 
+
+Check out this small project !
+https://github.com/rafagonc/Reading-List/
+
+And the registrations!
+https://github.com/rafagonc/Reading-List/blob/master/ReadingList/REDDepedencyInjection.m
 
 ## License
   
