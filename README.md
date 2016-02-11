@@ -5,7 +5,7 @@ Depend is a simple dependency injection framework to do the simplest and minimal
 
 ## The Installation
   
-You can install using cocoa pods:  
+You can install using CocoaPods:  
 <pre>pod ‘Depend'</pre>  
 
 Or, you can drop the files inside Pod/Classes into your project.
