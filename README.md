@@ -28,7 +28,8 @@ On the app delegate, you need to call the DPInjector inject method:
 </pre>
   
 To inject on a class you just need to write your property declaration with the 'injected' prefix to the setter and the readonly qualifier. It’s important to declare it on the private interface of your class.  
-<pre>@property (setter=injected:, readonly) id&lt;DPDatasourceProtocol&gt; datasource;</pre>  
+<pre>@property (setter=injected1:) id&lt;DPDatasourceProtocol&gt; datasource;</pre>  
+<pre>@property (setter=injected2:) id&lt;REDUser&gt; user;</pre>  
 Done! When you access **self.datasource **, it is going to be already populated.  
 
 
@@ -36,8 +37,8 @@ Done! When you access **self.datasource **, it is going to be already populated.
   
 For you who wondered what is the context parameter on the DPRegistry registerImplementation:forProtocol:context: method. Defining a context on the injection and in the registration can be used to provide different implementations.  
 Just change the injection declaration to:  
-<pre>@property (setter=injected_post:, readonly) id&lt;DPDatasourceProtocol&gt; postDatasource;  
-@property (setter=injected_stupid:, readonly) id&lt;DPDatasourceProtocol&gt; anotherStupidDatasource;</pre>  
+<pre>@property (setter=injected_post:) id&lt;DPDatasourceProtocol&gt; postDatasource;  
+@property (setter=injected_stupid:) id&lt;DPDatasourceProtocol&gt; anotherStupidDatasource;</pre>  
 And the registration to:  
 <pre>[[DPRegistry sharedRegistry] registerImplementation:[DPPostDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“post”];
 [[DPRegistry sharedRegistry] registerImplementation:[DPStupidDatasource class] forProtocol:@protocol(DPDatasourceProtocol) context:@“stupid”];</pre>  
