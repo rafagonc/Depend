@@ -33,7 +33,7 @@
     
     implementation = [[EXAnotherProtocolImplementation alloc] init];
     
-    [[DPRegistry sharedRegistry] registerImplementation:[[EXProtocolImplementation alloc] init] forProtocol:@protocol(EXProtocol) context:nil];
+    [[DPRegistry sharedRegistry] registerImplementation:[EXProtocolImplementation class] forProtocol:@protocol(EXProtocol) context:nil];
     [[DPRegistry sharedRegistry] registerImplementation:implementation forProtocol:@protocol(EXProtocol) context:@"another"];
     
     injected = [[EXInjectedSubclass alloc] init];

@@ -9,6 +9,7 @@
 #import "DPRegistry.h"
 #import <objc/runtime.h>
 #import "DPImplementationKey.h"
+#import "DPImplementationValue.h"
 
 @interface DPRegistry ()
 
@@ -44,7 +45,7 @@
 -(id)implementationForProtocol:(NSString *)protocolName andContext:(NSString *)context {
     DPImplementationKey * key = [[DPImplementationKey alloc] initWithProtocolName:protocolName andContext:context];
     id imp = [self.mRegistrations objectForKey:key];
-    if (class_isMetaClass(object_getClass(imp))) {
+    if ([imp class] == imp) {
         return [[(Class)imp alloc] init];
     } else {
         return imp;
@@ -53,7 +54,7 @@
 -(BOOL)isSingleton:(NSString *)protocolName andContext:(NSString *)context {
     DPImplementationKey * key = [[DPImplementationKey alloc] initWithProtocolName:protocolName andContext:context];
     id imp = [self.mRegistrations objectForKey:key];
-    if (class_isMetaClass(object_getClass(imp))) {
+    if ([imp class] == imp) {
         return NO;
     } else {
         return YES;

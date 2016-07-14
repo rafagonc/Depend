@@ -19,6 +19,7 @@
 		2A2E64981BABC7D6001752FE /* DPInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E64911BABC7D6001752FE /* DPInjector.m */; };
 		2A2E64991BABC7D6001752FE /* DPRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E64931BABC7D6001752FE /* DPRegistry.m */; };
 		2A92CA341BDFE33C004044D7 /* EXInjectedSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92CA331BDFE33C004044D7 /* EXInjectedSubclass.m */; };
+		4458D1A61D3808A40053C14A /* DPImplementationValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4458D1A51D3808A40053C14A /* DPImplementationValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		2A2E64931BABC7D6001752FE /* DPRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPRegistry.m; path = Pod/Classes/DPRegistry.m; sourceTree = SOURCE_ROOT; };
 		2A92CA321BDFE33C004044D7 /* EXInjectedSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXInjectedSubclass.h; sourceTree = "<group>"; };
 		2A92CA331BDFE33C004044D7 /* EXInjectedSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXInjectedSubclass.m; sourceTree = "<group>"; };
+		4458D1A41D3808A40053C14A /* DPImplementationValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPImplementationValue.h; path = Pod/Classes/DPImplementationValue.h; sourceTree = SOURCE_ROOT; };
+		4458D1A51D3808A40053C14A /* DPImplementationValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPImplementationValue.m; path = Pod/Classes/DPImplementationValue.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				2A2E64911BABC7D6001752FE /* DPInjector.m */,
 				2A2E64921BABC7D6001752FE /* DPRegistry.h */,
 				2A2E64931BABC7D6001752FE /* DPRegistry.m */,
+				4458D1A41D3808A40053C14A /* DPImplementationValue.h */,
+				4458D1A51D3808A40053C14A /* DPImplementationValue.m */,
 			);
 			path = Depend;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4458D1A61D3808A40053C14A /* DPImplementationValue.m in Sources */,
 				2A2E64981BABC7D6001752FE /* DPInjector.m in Sources */,
 				2A2E64961BABC7D6001752FE /* DPInjectionDescriptor.m in Sources */,
 				2A2E64991BABC7D6001752FE /* DPRegistry.m in Sources */,
