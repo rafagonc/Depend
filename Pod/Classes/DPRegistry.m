@@ -58,5 +58,10 @@
     DPImplementationKey *desc = [[DPImplementationKey alloc] initWithProtocolName:NSStringFromProtocol(protocol) andContext:context];
     [self.mRegistrations setObject:imp forKey:desc];
 }
+-(void)unregisterImplementationForProtocol:(Protocol *)protocol context:(NSString *)context {
+    NSAssert(protocol != nil, @"Protocol cannot be nil when adding an implementation to the registry");
+    DPImplementationKey *desc = [[DPImplementationKey alloc] initWithProtocolName:NSStringFromProtocol(protocol) andContext:context];
+    [self.mRegistrations removeObjectForKey:desc];
+}
 
 @end

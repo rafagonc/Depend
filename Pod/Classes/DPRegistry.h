@@ -34,6 +34,7 @@
  *  it is a method
  */
 -(void)registerImplementation:(id)imp forProtocol:(Protocol *)protocol context:(NSString *)context;
+-(void)unregisterImplementationForProtocol:(Protocol *)protocol context:(NSString *)context;
 
 #pragma mark - retrieve
 /**

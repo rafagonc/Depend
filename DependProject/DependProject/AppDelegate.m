@@ -14,7 +14,7 @@
 
 @end
 
-@implementation AppDelegate
+@implementation AppDeleggate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
