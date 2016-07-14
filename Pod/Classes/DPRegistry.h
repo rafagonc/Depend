@@ -36,6 +36,9 @@
 -(void)registerImplementation:(id)imp forProtocol:(Protocol *)protocol context:(NSString *)context;
 -(void)unregisterImplementationForProtocol:(Protocol *)protocol context:(NSString *)context;
 
+#pragma mark - singleton
+-(BOOL)isSingleton:(NSString *)protocolName andContext:(NSString *)context;
+
 #pragma mark - retrieve
 /**
  *  Method for retriving an instance that conforms with the protocol

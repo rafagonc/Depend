@@ -42,11 +42,16 @@ id returnInjectedValue(id self, SEL _cmd) {
         propertyDescriptor = [injectionDescriptor propertyDescriptorForSelector:_cmd];
         if (class_isMetaClass([NSObject class])) break;
     }
-    id injectedObject = objc_getAssociatedObject(self, _cmd);
-    if (injectedObject == nil) {
-        objc_setAssociatedObject(self, _cmd, [[DPRegistry sharedRegistry] implementationForProtocol:propertyDescriptor.protocolName andContext:propertyDescriptor.context] , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    BOOL isSingleton = [[DPRegistry sharedRegistry] isSingleton:propertyDescriptor.protocolName andContext:propertyDescriptor.context];
+    if (isSingleton) {
+        return [[DPRegistry sharedRegistry] implementationForProtocol:propertyDescriptor.protocolName andContext:propertyDescriptor.context];
+    } else {
+        id injectedObject = objc_getAssociatedObject(self, _cmd);
+        if (injectedObject == nil) {
+            objc_setAssociatedObject(self, _cmd, [[DPRegistry sharedRegistry] implementationForProtocol:propertyDescriptor.protocolName andContext:propertyDescriptor.context] , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+        return objc_getAssociatedObject(self, _cmd);
     }
-    return objc_getAssociatedObject(self, _cmd);
 }
 
 @end

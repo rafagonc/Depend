@@ -50,6 +50,15 @@
         return imp;
     }
 }
+-(BOOL)isSingleton:(NSString *)protocolName andContext:(NSString *)context {
+    DPImplementationKey * key = [[DPImplementationKey alloc] initWithProtocolName:protocolName andContext:context];
+    id imp = [self.mRegistrations objectForKey:key];
+    if (class_isMetaClass(object_getClass(imp))) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
 
 #pragma mark - add
 -(void)registerImplementation:(id)imp forProtocol:(Protocol *)protocol context:(NSString *)context {
